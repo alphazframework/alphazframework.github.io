@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Session Handling | Zest Framework</title>
+    <meta name="generator" content="VuePress 1.9.7">
+    
+    <meta name="description" content="Zest Framework Documentation">
+    <meta name="theme-color" content="#3eaf7c">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    
+    <link rel="preload" href="/assets/css/0.styles.6ba2a0ee.css" as="style"><link rel="preload" href="/assets/js/app.302a5d7b.js" as="script"><link rel="preload" href="/assets/js/2.48f357d1.js" as="script"><link rel="preload" href="/assets/js/19.e170331d.js" as="script"><link rel="prefetch" href="/assets/js/10.7bd2e366.js"><link rel="prefetch" href="/assets/js/11.0ce2d21f.js"><link rel="prefetch" href="/assets/js/12.0c955f34.js"><link rel="prefetch" href="/assets/js/13.e2c0e8d0.js"><link rel="prefetch" href="/assets/js/14.52434abe.js"><link rel="prefetch" href="/assets/js/15.19294d7b.js"><link rel="prefetch" href="/assets/js/16.7cfc5c85.js"><link rel="prefetch" href="/assets/js/17.db791133.js"><link rel="prefetch" href="/assets/js/18.88075047.js"><link rel="prefetch" href="/assets/js/20.d0ff5775.js"><link rel="prefetch" href="/assets/js/21.d3991c35.js"><link rel="prefetch" href="/assets/js/22.fb1374a6.js"><link rel="prefetch" href="/assets/js/23.7b1e4026.js"><link rel="prefetch" href="/assets/js/24.6a93196a.js"><link rel="prefetch" href="/assets/js/25.ee8d2e22.js"><link rel="prefetch" href="/assets/js/26.4a484640.js"><link rel="prefetch" href="/assets/js/27.35777a2d.js"><link rel="prefetch" href="/assets/js/28.42077925.js"><link rel="prefetch" href="/assets/js/3.79d0cf85.js"><link rel="prefetch" href="/assets/js/4.e188c870.js"><link rel="prefetch" href="/assets/js/5.dd4d9bf4.js"><link rel="prefetch" href="/assets/js/6.4a0603f6.js"><link rel="prefetch" href="/assets/js/7.c1fcb464.js"><link rel="prefetch" href="/assets/js/8.b0834112.js"><link rel="prefetch" href="/assets/js/9.9ac24cae.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.6ba2a0ee.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"><!----> <span class="site-name">Zest Framework</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/basics/" class="nav-link router-link-active">
+  Basic
+</a></div><div class="nav-item"><a href="/security/" class="nav-link">
+  Security
+</a></div><div class="nav-item"><a href="/components/" class="nav-link">
+  Components
+</a></div><div class="nav-item"><a href="/docker/" class="nav-link">
+  Docker
+</a></div><div class="nav-item"><a href="https://alphasofthub.com/" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  AlphaSoftHub
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></div> <a href="https://github.com/zestframework/zestframework.github.io" target="_blank" rel="noopener noreferrer" class="repo-link">
+    GitHub
+    <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/basics/" class="nav-link router-link-active">
+  Basic
+</a></div><div class="nav-item"><a href="/security/" class="nav-link">
+  Security
+</a></div><div class="nav-item"><a href="/components/" class="nav-link">
+  Components
+</a></div><div class="nav-item"><a href="/docker/" class="nav-link">
+  Docker
+</a></div><div class="nav-item"><a href="https://alphasofthub.com/" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  AlphaSoftHub
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></div> <a href="https://github.com/zestframework/zestframework.github.io" target="_blank" rel="noopener noreferrer" class="repo-link">
+    GitHub
+    <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></nav>  <ul class="sidebar-links"><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading open"><span>Basics</span> <span class="arrow down"></span></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/basics/" aria-current="page" class="sidebar-link">Introduction</a></li><li><a href="/basics/installation.html" class="sidebar-link">Installation Requirements:</a></li><li><a href="/basics/controller.html" class="sidebar-link">Controller</a></li><li><a href="/basics/routing.html" class="sidebar-link">Where to Define Your Application Routes</a></li><li><a href="/basics/views.html" class="sidebar-link">Views</a></li><li><a href="/basics/models.html" class="sidebar-link">Model</a></li><li><a href="/basics/validations.html" class="sidebar-link">Validations</a></li><li><a href="/basics/sessions.html" aria-current="page" class="active sidebar-link">Session Handling</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/basics/sessions.html#configuration" class="sidebar-link">Configuration</a></li></ul></li><li><a href="/basics/cookies.html" class="sidebar-link">Cookie Management</a></li><li><a href="/basics/logging.html" class="sidebar-link">Logger</a></li><li><a href="/basics/localization.html" class="sidebar-link">Localization</a></li><li><a href="/basics/input.html" class="sidebar-link">Input</a></li></ul></section></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h1 id="session-handling"><a href="#session-handling" class="header-anchor">#</a> Session Handling</h1> <div class="custom-block tip"><p class="custom-block-title">TIP</p> <p>Session handling library bundled with Zest Framework.</p></div> <h2 id="configuration"><a href="#configuration" class="header-anchor">#</a> Configuration</h2> <p>There is no configuration need for using session library in Zest framework but if you want change session storage path in Config.php you have to change according to the details of your server.</p> <div class="language-php line-numbers-mode"><pre class="language-php"><code><span class="token comment">/**
+ * Default Session storage path.
+ *
+ * @var string
+ */</span>
+<span class="token keyword">const</span> <span class="token constant">Session_Path</span> <span class="token operator">=</span> <span class="token string single-quoted-string">'../Storage/Session/'</span><span class="token punctuation">;</span>
+
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br></div></div><h3 id="set"><a href="#set" class="header-anchor">#</a> Set</h3> <p>For setting the session and its value you need to used  <code>setValue()</code>  method take a look at an example:</p> <div class="language-php line-numbers-mode"><pre class="language-php"><code><span class="token php language-php"><span class="token delimiter important">&lt;?php</span>
+
+<span class="token keyword">namespace</span> <span class="token package">App<span class="token punctuation">\</span>Models</span><span class="token punctuation">;</span>
+<span class="token keyword">use</span> <span class="token package">Zest<span class="token punctuation">\</span>Session<span class="token punctuation">\</span>Session</span><span class="token punctuation">;</span>
+<span class="token keyword">class</span> <span class="token class-name-definition class-name">users</span>
+<span class="token punctuation">{</span>
+
+    <span class="token keyword">public</span> <span class="token keyword">function</span> <span class="token function-definition function">login</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+    <span class="token punctuation">{</span>
+        <span class="token comment">//its prototype is Session::setvalue(&quot;name&quot;,&quot;value&quot;);</span>
+        <span class="token class-name static-context">Session</span><span class="token operator">::</span><span class="token function">setValue</span><span class="token punctuation">(</span><span class="token string single-quoted-string">'users'</span><span class="token punctuation">,</span><span class="token number">11223</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token comment">//return boolean, true | false</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+</span></code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br></div></div><h3 id="get"><a href="#get" class="header-anchor">#</a> Get</h3> <p>To get the session value you need to used  <code>getValue()</code>  method take a look at an example:</p> <div class="language-php line-numbers-mode"><pre class="language-php"><code><span class="token php language-php"><span class="token delimiter important">&lt;?php</span>
+
+<span class="token keyword">namespace</span> <span class="token package">App<span class="token punctuation">\</span>Models</span><span class="token punctuation">;</span>
+<span class="token keyword">use</span> <span class="token package">Zest<span class="token punctuation">\</span>Session<span class="token punctuation">\</span>Session</span><span class="token punctuation">;</span>
+<span class="token keyword">class</span> <span class="token class-name-definition class-name">users</span>
+<span class="token punctuation">{</span>
+
+    <span class="token keyword">public</span> <span class="token keyword">function</span> <span class="token function-definition function">getLogin</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+    <span class="token punctuation">{</span>
+        <span class="token comment">//its prototype is Session::getValue(&quot;name&quot;);</span>
+        <span class="token class-name static-context">Session</span><span class="token operator">::</span><span class="token function">getValue</span><span class="token punctuation">(</span><span class="token string single-quoted-string">'users'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token comment">//return value on success  boolean false on fail</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+</span></code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br></div></div><h3 id="delete"><a href="#delete" class="header-anchor">#</a> Delete</h3> <p>For deleting the session value you need to used  <code>unsetValue()</code>  method take a look at example:</p> <div class="language-php line-numbers-mode"><pre class="language-php"><code><span class="token php language-php"><span class="token delimiter important">&lt;?php</span>
+
+<span class="token keyword">namespace</span> <span class="token package">App<span class="token punctuation">\</span>Models</span><span class="token punctuation">;</span>
+<span class="token keyword">use</span> <span class="token package">Zest<span class="token punctuation">\</span>Session<span class="token punctuation">\</span>Session</span><span class="token punctuation">;</span>
+<span class="token keyword">class</span> <span class="token class-name-definition class-name">users</span>
+<span class="token punctuation">{</span>
+
+    <span class="token keyword">public</span> <span class="token keyword">function</span> <span class="token function-definition function">logout</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+    <span class="token punctuation">{</span>
+        <span class="token comment">//its prototype is Session::unsetValue(&quot;name&quot;);</span>
+        <span class="token class-name static-context">Session</span><span class="token operator">::</span><span class="token function">unsetValue</span><span class="token punctuation">(</span><span class="token string single-quoted-string">'users'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token comment">//return boolean, true | false</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+</span></code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br></div></div><h3 id="check"><a href="#check" class="header-anchor">#</a> Check</h3> <p>For checking is session is active you need to used  <code>isSession()</code>  method take a look at an example:</p> <div class="language-php line-numbers-mode"><pre class="language-php"><code><span class="token php language-php"><span class="token delimiter important">&lt;?php</span>
+
+<span class="token keyword">namespace</span> <span class="token package">App<span class="token punctuation">\</span>Models</span><span class="token punctuation">;</span>
+<span class="token keyword">use</span> <span class="token package">Zest<span class="token punctuation">\</span>Session<span class="token punctuation">\</span>Session</span><span class="token punctuation">;</span>
+<span class="token keyword">class</span> <span class="token class-name-definition class-name">users</span>
+<span class="token punctuation">{</span>
+
+    <span class="token keyword">public</span> <span class="token keyword">function</span> <span class="token function-definition function">isLogin</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+    <span class="token punctuation">{</span>
+        <span class="token comment">//its prototype is Session::isSession(&quot;name&quot;);</span>
+        <span class="token class-name static-context">Session</span><span class="token operator">::</span><span class="token function">isSession</span><span class="token punctuation">(</span><span class="token string single-quoted-string">'users'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token comment">//return boolean, true | false</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</span></code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br></div></div></div> <footer class="page-edit"><!----> <div class="last-updated"><span class="prefix">Last Updated:</span> <span class="time">3/22/2022, 4:20:26 PM</span></div></footer> <div class="page-nav"><p class="inner"><span class="prev">
+      ←
+      <a href="/basics/validations.html" class="prev">
+        Validations
+      </a></span> <span class="next"><a href="/basics/cookies.html">
+        Cookie Management
+      </a>
+      →
+    </span></p></div> </main></div><div class="global-ui"></div></div>
+    <script src="/assets/js/app.302a5d7b.js" defer></script><script src="/assets/js/2.48f357d1.js" defer></script><script src="/assets/js/19.e170331d.js" defer></script>
+  </body>
+</html>

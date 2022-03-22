@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Where to Define Your Application Routes | Zest Framework</title>
+    <meta name="generator" content="VuePress 1.9.7">
+    
+    <meta name="description" content="Zest Framework Documentation">
+    <meta name="theme-color" content="#3eaf7c">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    
+    <link rel="preload" href="/assets/css/0.styles.6ba2a0ee.css" as="style"><link rel="preload" href="/assets/js/app.302a5d7b.js" as="script"><link rel="preload" href="/assets/js/2.48f357d1.js" as="script"><link rel="preload" href="/assets/js/18.88075047.js" as="script"><link rel="prefetch" href="/assets/js/10.7bd2e366.js"><link rel="prefetch" href="/assets/js/11.0ce2d21f.js"><link rel="prefetch" href="/assets/js/12.0c955f34.js"><link rel="prefetch" href="/assets/js/13.e2c0e8d0.js"><link rel="prefetch" href="/assets/js/14.52434abe.js"><link rel="prefetch" href="/assets/js/15.19294d7b.js"><link rel="prefetch" href="/assets/js/16.7cfc5c85.js"><link rel="prefetch" href="/assets/js/17.db791133.js"><link rel="prefetch" href="/assets/js/19.e170331d.js"><link rel="prefetch" href="/assets/js/20.d0ff5775.js"><link rel="prefetch" href="/assets/js/21.d3991c35.js"><link rel="prefetch" href="/assets/js/22.fb1374a6.js"><link rel="prefetch" href="/assets/js/23.7b1e4026.js"><link rel="prefetch" href="/assets/js/24.6a93196a.js"><link rel="prefetch" href="/assets/js/25.ee8d2e22.js"><link rel="prefetch" href="/assets/js/26.4a484640.js"><link rel="prefetch" href="/assets/js/27.35777a2d.js"><link rel="prefetch" href="/assets/js/28.42077925.js"><link rel="prefetch" href="/assets/js/3.79d0cf85.js"><link rel="prefetch" href="/assets/js/4.e188c870.js"><link rel="prefetch" href="/assets/js/5.dd4d9bf4.js"><link rel="prefetch" href="/assets/js/6.4a0603f6.js"><link rel="prefetch" href="/assets/js/7.c1fcb464.js"><link rel="prefetch" href="/assets/js/8.b0834112.js"><link rel="prefetch" href="/assets/js/9.9ac24cae.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.6ba2a0ee.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"><!----> <span class="site-name">Zest Framework</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/basics/" class="nav-link router-link-active">
+  Basic
+</a></div><div class="nav-item"><a href="/security/" class="nav-link">
+  Security
+</a></div><div class="nav-item"><a href="/components/" class="nav-link">
+  Components
+</a></div><div class="nav-item"><a href="/docker/" class="nav-link">
+  Docker
+</a></div><div class="nav-item"><a href="https://alphasofthub.com/" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  AlphaSoftHub
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></div> <a href="https://github.com/zestframework/zestframework.github.io" target="_blank" rel="noopener noreferrer" class="repo-link">
+    GitHub
+    <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/basics/" class="nav-link router-link-active">
+  Basic
+</a></div><div class="nav-item"><a href="/security/" class="nav-link">
+  Security
+</a></div><div class="nav-item"><a href="/components/" class="nav-link">
+  Components
+</a></div><div class="nav-item"><a href="/docker/" class="nav-link">
+  Docker
+</a></div><div class="nav-item"><a href="https://alphasofthub.com/" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  AlphaSoftHub
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></div> <a href="https://github.com/zestframework/zestframework.github.io" target="_blank" rel="noopener noreferrer" class="repo-link">
+    GitHub
+    <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></nav>  <ul class="sidebar-links"><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading open"><span>Basics</span> <span class="arrow down"></span></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/basics/" aria-current="page" class="sidebar-link">Introduction</a></li><li><a href="/basics/installation.html" class="sidebar-link">Installation Requirements:</a></li><li><a href="/basics/controller.html" class="sidebar-link">Controller</a></li><li><a href="/basics/routing.html" aria-current="page" class="active sidebar-link">Where to Define Your Application Routes</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/basics/routing.html#simple-way-to-define-router" class="sidebar-link">Simple way to define router</a></li><li class="sidebar-sub-header"><a href="/basics/routing.html#router-with-parameter" class="sidebar-link">Router with parameter</a></li><li class="sidebar-sub-header"><a href="/basics/routing.html#router-with-complex-parameter" class="sidebar-link">Router with complex parameter</a></li><li class="sidebar-sub-header"><a href="/basics/routing.html#defining-get-routes" class="sidebar-link">Defining GET Routes</a></li><li class="sidebar-sub-header"><a href="/basics/routing.html#defining-post-routes" class="sidebar-link">Defining POST Routes</a></li></ul></li><li><a href="/basics/views.html" class="sidebar-link">Views</a></li><li><a href="/basics/models.html" class="sidebar-link">Model</a></li><li><a href="/basics/validations.html" class="sidebar-link">Validations</a></li><li><a href="/basics/sessions.html" class="sidebar-link">Session Handling</a></li><li><a href="/basics/cookies.html" class="sidebar-link">Cookie Management</a></li><li><a href="/basics/logging.html" class="sidebar-link">Logger</a></li><li><a href="/basics/localization.html" class="sidebar-link">Localization</a></li><li><a href="/basics/input.html" class="sidebar-link">Input</a></li></ul></section></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h1 id="where-to-define-your-application-routes"><a href="#where-to-define-your-application-routes" class="header-anchor">#</a> Where to Define Your Application Routes</h1> <p><strong><em>goto routes directory of project you will see routes.php all routes define here</em></strong></p> <h2 id="simple-way-to-define-router"><a href="#simple-way-to-define-router" class="header-anchor">#</a> Simple way to define router</h2> <p>Zest framework support different way to define routes  <code>$router-&gt;add('path', ['controller' =&gt; 'name', 'action' =&gt; 'name']);</code>  OR  <code>$router-&gt;add('path','controller@method');</code>  the path is the like example.com/about in this case about will be the path controller is the name of controller which one you want to use for this route action is method of controller</p> <h3 id="dispatch"><a href="#dispatch" class="header-anchor">#</a> Dispatch</h3> <p><code>$router-&gt;dispatch($_SERVER['QUERY_STRING']);</code>  are use to process request</p> <h1 id="route-with-closure-or-callback"><a href="#route-with-closure-or-callback" class="header-anchor">#</a> Route with Closure or Callback</h1> <p>You can also define a route that uses a Closure or callback as the handler like so  <code>$router-&gt;add('user/{id:[0-9]}', function ($args) { echo 'Example route using closure '.$args['id'] . &quot; &quot;.$args['name']; });</code></p> <h2 id="router-with-parameter"><a href="#router-with-parameter" class="header-anchor">#</a> Router with parameter</h2> <p>Router with parameter means you want passing parameter to the url e.g example.com/profile/100  <code>100</code>  is the parameter of the request  <code>$router-&gt;add('{controller}/{id:\d+}/{action}', ['controller' =&gt; 'profile','action' =&gt; 'index']);</code>  This will create example.com/profile/100 for you you can access by placeholder that you use in case  <code>id</code></p> <h2 id="router-with-complex-parameter"><a href="#router-with-complex-parameter" class="header-anchor">#</a> Router with complex parameter</h2> <p>You can also add router with complex parameter in this case you have to use  <code>regx</code> <code>$router-&gt;add('{controller}/{username:[a-z+0-9]+}/{action}', ['controller' =&gt; 'profile','action' =&gt; 'index']);</code>  its create url example.com/profile/username you can pass string+numbers here and access through placeholder that you define in this case  <code>username</code></p> <h2 id="defining-get-routes"><a href="#defining-get-routes" class="header-anchor">#</a> Defining GET Routes</h2> <div class="language-php line-numbers-mode"><pre class="language-php"><code><span class="token php language-php"><span class="token delimiter important">&lt;?php</span>
+<span class="token comment">/**
+    * @param target,
+    * @param handler, fully qualified classname and method or Closure
+ */</span>
+
+<span class="token variable">$router</span><span class="token operator">-&gt;</span><span class="token function">get</span><span class="token punctuation">(</span><span class="token string single-quoted-string">''</span><span class="token punctuation">,</span> <span class="token string single-quoted-string">'Home@index'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token comment">//OR</span>
+<span class="token comment">// $router-&gt;add('',&quot;Home@index&quot;,'GET');</span>
+<span class="token comment">// $router-&gt;get('',['controller'=&gt;'Home','method'=&gt;'index']);</span>
+<span class="token comment">// $router-&gt;add('',['controller'=&gt;'Home','method'=&gt;'index'],'GET');</span>
+
+
+</span></code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br></div></div><h2 id="defining-post-routes"><a href="#defining-post-routes" class="header-anchor">#</a> Defining POST Routes</h2> <div class="language-php line-numbers-mode"><pre class="language-php"><code><span class="token php language-php"><span class="token delimiter important">&lt;?php</span>
+<span class="token comment">/**
+    * @param target,
+    * @param handler, fully qualified classname and method or Closure
+ */</span>
+
+<span class="token variable">$router</span><span class="token operator">-&gt;</span><span class="token function">post</span><span class="token punctuation">(</span><span class="token string single-quoted-string">'login'</span><span class="token punctuation">,</span> <span class="token string single-quoted-string">'Home@login'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token comment">//OR</span>
+<span class="token comment">// $router-&gt;add('login',&quot;Home@login&quot;,'POST');</span>
+<span class="token comment">// $router-&gt;post('login',['controller'=&gt;'Home','method'=&gt;'login']);</span>
+<span class="token comment">// $router-&gt;add('login',['controller'=&gt;'Home','method'=&gt;'login'],'POST');</span>
+
+</span></code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br></div></div><p>The Zest Route class supports all major HTTP Verbs (POST, GET, PUT, PATCH, DELETE) for example to create a route with PATCH HTTP verb simple do the following</p> <div class="language-php line-numbers-mode"><pre class="language-php"><code><span class="token php language-php"><span class="token delimiter important">&lt;?php</span>
+<span class="token comment">/**
+    * @param target,
+    * @param handler, fully qualified classname and method or Closure
+ */</span>
+
+<span class="token variable">$router</span><span class="token operator">-&gt;</span><span class="token function">patch</span><span class="token punctuation">(</span><span class="token string single-quoted-string">'profile/update'</span><span class="token punctuation">,</span> <span class="token string single-quoted-string">'Account@update'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token comment">//OR</span>
+<span class="token comment">// $router-&gt;add('login',&quot;Home@update&quot;,'PATCH');</span>
+<span class="token comment">// $router-&gt;patch('login',['controller'=&gt;'Home','method'=&gt;'update']);</span>
+<span class="token comment">// $router-&gt;add('login',['controller'=&gt;'Home','method'=&gt;'update'],'PATCH');</span>
+
+
+</span></code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br></div></div><h1 id="route-caching"><a href="#route-caching" class="header-anchor">#</a> Route Caching</h1> <p>Zest Franework provide router caching feature so you should take advantage of Zest's route cache.</p> <p><strong>Zest router cache file</strong>  Zest router file located at  <em>root/Storage/Cache</em></p> <p>Using the route cache will drastically decrease the amount of time it takes to register all of your application's routes. In some cases, your route registration may even be up to 100x faster. To generate a route cache, just need to enable from config file</p> <p><strong>ROUTER_CACHE</strong>  =&gt; set to true to enable caching, or false to disable caching. Default value is true.</p> <p>Zest framework provide an easy creating website using zest</p> <p>After running this command, your cached routes file will be loaded on every request. Remember, if you add any new routes. You don't need to regenerate a fresh route cache, Because Zest framework regenerate a fresh route cache automatically for you affter specific time define in config file.</p> <p><strong>ROUTE_CACHE_REGENERATE</strong>  timestamp for cache file, after expire cache file auto refreshed , default value is 3600 - 1Hour.</p> <div class="custom-block danger"><p class="custom-block-title">DANGER</p> <p>Router caching feature is not available in components</p></div></div> <footer class="page-edit"><!----> <div class="last-updated"><span class="prefix">Last Updated:</span> <span class="time">3/22/2022, 4:20:26 PM</span></div></footer> <div class="page-nav"><p class="inner"><span class="prev">
+      ←
+      <a href="/basics/controller.html" class="prev">
+        Controller
+      </a></span> <span class="next"><a href="/basics/views.html">
+        Views
+      </a>
+      →
+    </span></p></div> </main></div><div class="global-ui"></div></div>
+    <script src="/assets/js/app.302a5d7b.js" defer></script><script src="/assets/js/2.48f357d1.js" defer></script><script src="/assets/js/18.88075047.js" defer></script>
+  </body>
+</html>
