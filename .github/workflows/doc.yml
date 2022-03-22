@@ -1,19 +1,17 @@
-name: Publish docs via GitHub Pages
-on:
-  push:
-    branches:
-      - master
-
+name: Build and Deploy
+on: [push]
 jobs:
-  build:
-    name: Deploy docs
+  build-and-deploy:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout master
-        uses: actions/checkout@v1
+    - name: Checkout
+      uses: actions/checkout@master
 
-      - name: Deploy docs
-        uses: mhausenblas/mkdocs-deploy-gh-pages@master
-        # Or use mhausenblas/mkdocs-deploy-gh-pages@nomaterial to build without the mkdocs-material theme
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }
+    - name: vuepress-deploy
+      uses: jenkey2011/vuepress-deploy@master
+      env:
+        ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
+        TARGET_REPO: zestframework/zestframework.github.io
+        TARGET_BRANCH: gh-pages
+        BUILD_SCRIPT: npm i && npm build
+        BUILD_DIR: src/.vuepress/dist

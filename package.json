@@ -1,0 +1,19 @@
+{
+  "name": "zest-doc",
+  "version": "0.0.1",
+  "description": "",
+  "main": "index.js",
+  "authors": {
+    "name": "Muhammad Umer Farooq",
+    "email": "umer@lablnet.com"
+  },
+  "repository": "/zest-doc",
+  "scripts": {
+    "dev": "vuepress dev src",
+    "build": "vuepress build src"
+  },
+  "license": "MIT",
+  "devDependencies": {
+    "vuepress": "^1.5.3"
+  }
+}

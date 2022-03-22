@@ -7,16 +7,16 @@ Document website for Zest Framework
 # clone the repo
 git clone https://github.com/zestframework/zestframework.github.io.git
 
-# install mkdocs
-pip install mkdocs
+# install dependencies
+npm install
 
 # serve locally
-mkdocs serve
+npm run dev
 ```
 
 ## Build
 ```sh
-mkdocs build
+npm run build
 ```
 
 ## Contribution
